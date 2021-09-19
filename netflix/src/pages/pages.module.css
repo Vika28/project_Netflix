@@ -1,0 +1,52 @@
+.form {
+    width: 600px;
+    margin: 0 auto;
+    background-color: #000000B6;
+    padding-top: 30px;
+    padding-bottom: 50px;
+
+}
+
+.input {
+    display: block;
+    height: 30px;
+    width: 400px;
+    margin: 0 auto 15px;
+}
+.page {
+    background-image: url("https://st1.bgr.in/wp-content/uploads/2018/07/Netflix-India.jpg");
+    /*background-size: auto 500px;*/
+    /*background-position: center center;*/
+    background-repeat: no-repeat !important;
+    padding-bottom: 500px;
+}
+.btn {
+    display: block;
+    width: 250px;
+    background-color: red;
+    color: #fff;
+    margin: 0 auto;
+    height: 55px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+}
+.btn:hover {
+    cursor: pointer;
+}
+.text {
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+}
+.signLink {
+    color: #fff;
+}
+.signLink:visited {
+    color: #fff;
+}
+.signTitle {
+    color: #fff;
+    text-align: center;
+}

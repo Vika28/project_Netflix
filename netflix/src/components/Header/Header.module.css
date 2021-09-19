@@ -1,0 +1,37 @@
+.headerMain {
+    display: flex;
+    justify-content: space-between;
+}
+.searchPanelWrapper {
+    text-align: center;
+}
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+}
+.logoLink {
+    text-decoration: none;
+}
+.logoLink:visited {
+    color: red;
+    text-decoration: none;
+}
+.btnRegister {
+    display: block;
+    width: 250px;
+    background-color: red;
+    color: #fff;
+    margin: 15px;
+    height: 55px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+}
+.btnRegister:hover {
+    cursor: pointer;
+}
+.signLink {
+    text-decoration: none;
+}

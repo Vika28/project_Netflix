@@ -1,9 +1,8 @@
 import React, {useState, useContext} from 'react';
 import { useHistory } from 'react-router-dom';
-// import Firebase from 'firebase/compat/app';
 import 'firebase/firestore';
 import 'firebase/auth';
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { FirebaseContext } from "../context/firebase";
 import {Link as ReachRouterLink } from 'react-router-dom';
 import * as ROUTES from './../constants/Routes';
@@ -14,11 +13,11 @@ import styles from "./pages.module.css";
 function Signup() {
 
     const history = useHistory();
-    // const { firebase } = useContext(FirebaseContext);
     const [firstName, setFirstName] = useState('');
     const [emailAddress, setEmailAddress] = useState('');
     const [password, setPassword] = useState('');
-    // const [error, setError] = useState('');
+    const [error, setError] = useState('');
+    const { firebase } = useContext(FirebaseContext);
 
     const isInvalid = firstName === '' || password === '' || emailAddress === '';
 
@@ -27,7 +26,17 @@ function Signup() {
 
         //do firebase stuff
         const auth = getAuth();
-        createUserWithEmailAndPassword(auth,emailAddress, password)
+        createUserWithEmailAndPassword(auth, emailAddress, password)
+            .then((result) => {
+                // console.log('result' ,result);
+                updateProfile(auth.currentUser, {
+                        displayName: firstName,
+
+                    })
+
+            })
+
+
             .then(() => {
                 history.push(ROUTES.BROWSE);
             })
@@ -35,6 +44,7 @@ function Signup() {
                 setFirstName('');
                 setPassword('');
                 setEmailAddress('');
+                setError(error.message);
             })
     }
 

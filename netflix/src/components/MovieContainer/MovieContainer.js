@@ -14,14 +14,12 @@ function MovieContainer({ fetchURL, page }) {
         //if [], run once when  rhe row loads, and dont run again
         async function fetchData() {
             const request = await axios.get(fetchURL);
-            console.log('request', request);
-            console.log('request data', request.data);
             setMovies(request.data);
             return request;
         }
         fetchData();
     }, [fetchURL]);
-    console.log('movies' , movies);
+    // console.log('movies' , movies);
     return (
         <div>
             <p>{page}</p>

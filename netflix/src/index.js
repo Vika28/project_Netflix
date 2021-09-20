@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import { firebase } from './lib/firebase.prod';
 import { FirebaseContext } from './context/firebase';
-import app from './app.css'
 
 ReactDOM.render(
     <>

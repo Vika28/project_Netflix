@@ -1,15 +1,24 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
 import styles from './MovieContainer.module.css';
+import AddFavourite from "./AddFavourite";
 
 
-function MovieCard(movie) {
+function MovieCard({ movie, favouriteComponent, handleFavouritesClick }) {
+    const FavouriteComponent = favouriteComponent;
+
     return (
-        <div key={movie.id} className={styles.movieCard}>
-            {/*<NavLink to={movie.movieURL}><img src={movie.src} alt={movie.name}/></NavLink>*/}
-            <a href={movie.movieURL}><img src={movie.src} alt={movie.name}/></a>
-            <h4>{movie.name}</h4>
+        <div className={styles.movieCard}>
+            <a href={movie.url}>
+                {movie.image &&
+                     <img src={movie.image.medium} alt={movie.name}/>
+                }
+                <h4>{movie.name}</h4>
+            </a>
             <p>Language: {movie.language}</p>
+            <div onClick={() => handleFavouritesClick(movie)}>
+                <FavouriteComponent />
+            </div>
         </div>
     )
 }

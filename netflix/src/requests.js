@@ -7,6 +7,7 @@ const requests = {
     fetchNetflixPage4: "/shows?page=4",
     fetchNetflixPage5: "/shows?page=5",
     fetchNetflixPage6: "/shows?page=6",
+    fetchSearch: "/search/shows?q=",
 }
 
 export default requests;

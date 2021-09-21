@@ -2,10 +2,14 @@ import React from 'react';
 import styles from './Profiles.module.css';
 import {Link as ReachRouterLink} from "react-router-dom";
 import { getAuth } from "firebase/auth";
+import DropdownFilter from "../DropdownFilter/DropdownFilter";
+import requests from "./../../requests";
+
 
 function Profiles({ userName }) {
     function signOut () {
-        return getAuth().signOut()
+        // localStorage.setItem('react-movie-app-favourites', '');
+        return getAuth().signOut();
     }
     return (
         <div>
@@ -15,6 +19,9 @@ function Profiles({ userName }) {
                 to='/' onClick={signOut}>
                 signout
             </ReachRouterLink>
+            {/*<DropdownFilter*/}
+            {/*    fetchURL={requests.fetchNetflixPage1}*/}
+            {/*/>*/}
         </div>
     )
 }

@@ -7,7 +7,6 @@ import Signin from "./pages/Signin";
 import Browse from "./pages/Browse";
 import { IsUserRedirect, ProtectedRoute } from './helpers/Routes1';
 import useAuthListener from "./hooks/useAuthListener";
-import requests from "./requests";
 
 function App() {
     const {user} = useAuthListener();

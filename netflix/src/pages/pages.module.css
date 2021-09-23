@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+
+
+}
 .form {
     width: 600px;
     margin: 0 auto;
@@ -12,13 +18,15 @@
     height: 30px;
     width: 400px;
     margin: 0 auto 15px;
+    text-align: center;
 }
 .page {
-    background-image: url("https://st1.bgr.in/wp-content/uploads/2018/07/Netflix-India.jpg");
+    background-image: url("https://miro.medium.com/max/1400/1*5lyavS59mazOFnb55Z6znQ.png");
     /*background-size: auto 500px;*/
-    /*background-position: center center;*/
+    background-size: cover;
+    background-position: center center;
     background-repeat: no-repeat !important;
-    padding-bottom: 500px;
+    padding: 20px 20px 500px;
 }
 .btn {
     display: block;
@@ -35,7 +43,12 @@
 .btn:hover {
     cursor: pointer;
 }
+.btn:disabled {
+    background-color: #671907;
+
+}
 .text {
+    margin-top: 20px;
     font-size: 18px;
     color: #fff;
     text-align: center;
@@ -47,6 +60,17 @@
     color: #fff;
 }
 .signTitle {
+    margin-bottom: 25px;
     color: #fff;
     text-align: center;
+}
+
+/*browse*/
+.browseHeader {
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 50px;
+    border-radius: 5px;
 }

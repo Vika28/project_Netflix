@@ -1,4 +1,5 @@
 import React from "react";
+import styles from './MovieContainer.module.css';
 
 function SearchBox(props) {
     return (
@@ -6,6 +7,8 @@ function SearchBox(props) {
             type="text"
             value={props.value}
             onChange={props.onChange}
+            placeholder='Search...'
+            className={styles.inputSearch}
         />
     )
 }

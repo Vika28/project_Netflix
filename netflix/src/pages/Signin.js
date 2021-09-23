@@ -1,21 +1,17 @@
 import React, {useState, useContext} from 'react';
 import { useHistory } from 'react-router-dom';
-// import 'firebase/firestore';
-// import 'firebase/auth';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import {Link as ReachRouterLink } from 'react-router-dom';
 import * as ROUTES from './../constants/Routes';
 import Logo from './../components/Header/Logo';
 import Input from "../components/Input";
 import styles from './pages.module.css';
-import { FirebaseContext } from "../context/firebase";
 
 function Signin() {
     const history = useHistory();
     const [emailAddress, setEmailAddress] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-    const { firebase } = useContext(FirebaseContext);
 
     const isInvalid = password === '' || emailAddress === '';
     const handleSignIn = (event) => {
@@ -40,15 +36,15 @@ function Signin() {
             <form onSubmit={handleSignIn} method="POST" className={styles.form}>
                 <h3 className={styles.signTitle}>Sign In</h3>
                 <Input
-                    type="text"
-                    placeholder="email"
+                    type="email"
+                    placeholder="Email"
                     value={emailAddress}
                     onChange={({ target }) => setEmailAddress(target.value)}
                     styles={styles}
                 />
                 <Input
-                    type="text"
-                    placeholder="password"
+                    type="password"
+                    placeholder="Password"
                     autoComplete="off"
                     value={password}
                     onChange={({ target }) => setPassword(target.value)}

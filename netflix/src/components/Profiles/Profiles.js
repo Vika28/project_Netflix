@@ -1,27 +1,23 @@
 import React from 'react';
-import styles from './Profiles.module.css';
-import {Link as ReachRouterLink} from "react-router-dom";
 import { getAuth } from "firebase/auth";
-import DropdownFilter from "../DropdownFilter/DropdownFilter";
-import requests from "./../../requests";
+import {Link as ReachRouterLink} from "react-router-dom";
+import styles from './Profiles.module.css';
 
 
 function Profiles({ userName }) {
     function signOut () {
-        // localStorage.setItem('react-movie-app-favourites', '');
+        localStorage.removeItem('react-movie-app-favourites');
         return getAuth().signOut();
     }
+
     return (
-        <div>
-            <h2>Profile</h2>
-            <p>{userName}</p>
+        <div className={styles.profileRow}>
+            {/*<h2>Profile</h2>*/}
+            <p className={styles.userName}>Name: {userName}</p>
             <ReachRouterLink
                 to='/' onClick={signOut}>
-                signout
+                <button className={styles.btnSignOut}>Sign Out</button>
             </ReachRouterLink>
-            {/*<DropdownFilter*/}
-            {/*    fetchURL={requests.fetchNetflixPage1}*/}
-            {/*/>*/}
         </div>
     )
 }

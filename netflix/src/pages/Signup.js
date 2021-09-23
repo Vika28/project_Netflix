@@ -55,19 +55,19 @@ function Signup() {
                 <h3 className={styles.signTitle}>Sign Up</h3>
                 <Input
                     type="text"
-                    placeholder="name"
+                    placeholder="Name"
                     value={firstName}
                     onChange={({target}) => setFirstName(target.value)}
                 />
                 <Input
-                    type="text"
-                    placeholder="email"
+                    type="email"
+                    placeholder="Email"
                     value={emailAddress}
                     onChange={({ target }) => setEmailAddress(target.value)}
                 />
                 <Input
-                    type="text"
-                    placeholder="password"
+                    type="password"
+                    placeholder="Password"
                     autoComplete="off"
                     value={password}
                     onChange={({ target }) => setPassword(target.value)}

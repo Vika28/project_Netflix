@@ -1,11 +1,66 @@
 .movieContainer {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    overflow: scroll;
+    flex-wrap: nowrap;
+}
+.movieContainerPage {
+    padding: 20px;
 }
 .movieCard {
     display: flex;
     flex-direction: column;
+    text-align: center;
     align-items: center;
     padding: 20px;
+}
+.movieCard:hover {
+    transition: 1s;
+    transform: scale(1.1);
+}
+.movieLink {
+    text-transform: uppercase;
+    color: #000;
+    margin-bottom: 15px;
+    text-decoration: none;
+}
+.movieLink:visited{
+    color: #000;
+}
+.noImg {
+    width: 210px;
+    height: 295px;
+}
+.inputSearch {
+    display: block;
+    margin: 50px auto;
+    text-align: center;
+    font-size: 20px;
+    width: 300px;
+    height: 50px;
+    border: 1px solid grey;
+    border-radius: 2px;
+}
+.favourite {
+    display: inline-block;
+    background-color: rgb(255, 255, 0);
+    padding: 3px 15px;
+    margin-top: 15px;
+    border-radius: 3px;
+}
+
+.favourite:hover {
+    cursor: pointer;
+}
+
+.likesAmount {
+    color: black;
+}
+
+.likesAmount:hover {
+    cursor: pointer;
+}
+
+.active {
+    color: red;
 }

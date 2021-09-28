@@ -9,6 +9,8 @@ import * as ROUTES from './../constants/Routes';
 import Logo from "../components/Header/Logo";
 import Input from "../components/Input";
 import styles from "./pages.module.css";
+import {addDoc, collection, getDocs, doc, setDoc, getDoc } from "firebase/firestore";
+import {db} from "../lib/firebase.prod";
 
 function Signup() {
 
@@ -17,10 +19,8 @@ function Signup() {
     const [emailAddress, setEmailAddress] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-    const { firebase } = useContext(FirebaseContext);
 
     const isInvalid = firstName === '' || password === '' || emailAddress === '';
-
     const handleSignUp = (event) => {
         event.preventDefault();
 
@@ -28,14 +28,18 @@ function Signup() {
         const auth = getAuth();
         createUserWithEmailAndPassword(auth, emailAddress, password)
             .then((result) => {
-                // console.log('result' ,result);
+                console.log('currentUser', result);
                 updateProfile(auth.currentUser, {
                         displayName: firstName,
-
                     })
 
-            })
+                const citiesRef = collection(db, "users");
 
+                setDoc(doc(citiesRef, result.user.uid), {
+                    favouriteMovies: [],
+                    likedMovies: [],
+                }, {merge: true})
+            })
 
             .then(() => {
                 history.push(ROUTES.BROWSE);

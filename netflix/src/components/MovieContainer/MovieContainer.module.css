@@ -1,7 +1,7 @@
 .movieContainer {
     display: flex;
     flex-direction: row;
-    overflow: scroll;
+    overflow-x: scroll;
     flex-wrap: nowrap;
 }
 .movieContainerPage {
@@ -15,8 +15,8 @@
     padding: 20px;
 }
 .movieCard:hover {
-    transition: 1s;
-    transform: scale(1.1);
+    /*transition: 1s;*/
+    /*transform: scale(1.1);*/
 }
 .movieLink {
     text-transform: uppercase;
@@ -61,6 +61,6 @@
     cursor: pointer;
 }
 
-.active {
+.activeLike {
     color: red;
 }

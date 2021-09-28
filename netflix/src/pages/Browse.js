@@ -9,6 +9,7 @@ function Browse(props) {
 
     const [profile, setProfile] = useState({});
     const [userName, setUserName] = useState('');
+    const [userUID, setUserUID] = useState('');
 
     useEffect(() => {
         const auth = getAuth();
@@ -16,9 +17,13 @@ function Browse(props) {
         onAuthStateChanged(auth, user => {
             if (user) {
                 setUserName(user.displayName);
+                setUserUID(user.uid);
             }
         });
     },[]);
+    console.log('user UID', userUID);
+
+
     return (
         <div>
             <div className={styles.browseHeader}>
@@ -28,7 +33,9 @@ function Browse(props) {
                     setProfile={setProfile}
                 />
             </div>
-            <MovieContainer />
+            <MovieContainer
+                userUID={userUID}
+            />
         </div>
     )
 }

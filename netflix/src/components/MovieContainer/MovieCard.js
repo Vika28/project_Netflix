@@ -1,28 +1,16 @@
 import React, {useState} from "react";
+import {collection, doc, getDoc, getDocs, updateDoc} from "firebase/firestore";
 import styles from './MovieContainer.module.css';
+import { db } from './../../lib/firebase.prod';
 
-function MovieCard({ movie, favouriteComponent, handleFavouritesClick, likedMovies, setLikedMovies }) {
+
+function MovieCard({ movie, favouriteComponent, handleFavouritesClick, likedMovies, storeLikeMovie }) {
     const FavouriteComponent = favouriteComponent;
-    const [counter, setCounter] = useState(movie.weight);
-    const likeMovie = () => {
+    let startCounter = (movie.weight);
 
-        if (likedMovies.includes(movie.id)) {
-            console.log('text color black');
-            console.log('remove this movie from likes');
-            likedMovies = likedMovies.filter(item => item !== movie.id);
-            setLikedMovies(likedMovies);
-            setCounter(counter - 1);
+    const likedActiveClass = likedMovies.some(item => item.id === movie.id ) ? styles.activeLike : '';
+    const counter = likedMovies.some(item => item.id === movie.id ) ? (startCounter + 1) : startCounter;
 
-
-
-        } else {
-            console.log('like, text red');
-            setCounter(counter + 1);
-            setLikedMovies([...likedMovies, movie.id]);
-        }
-    }
-    // likedMovies.includes(movie.id)}
-    const likedActiveClass = likedMovies.includes(movie.id) ? styles.active : '' ;
     return (
         <div className={styles.movieCard}>
             <a href={movie.url} className={styles.movieLink}>
@@ -35,8 +23,10 @@ function MovieCard({ movie, favouriteComponent, handleFavouritesClick, likedMovi
             <p>Language: {movie.language}</p>
             <span
                 className={`${styles.likesAmount} ${likedActiveClass}`}
-                onClick={likeMovie}
-            >{counter}	&#10084;</span>
+                onClick={()=>{
+                    storeLikeMovie(movie);
+                }}
+            >&#10084; {counter}</span>
             <div onClick={() => handleFavouritesClick(movie)}>
                 <FavouriteComponent />
             </div>

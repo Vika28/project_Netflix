@@ -26,6 +26,7 @@ function Signin() {
                 setPassword('');
                 setError(error.message);
                 console.log(error);
+                alert('No user with such email and password, please try again or sign up');
             })
     }
 

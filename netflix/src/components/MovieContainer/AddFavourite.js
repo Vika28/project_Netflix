@@ -3,9 +3,9 @@ import styles from './MovieContainer.module.css';
 
 function AddFavourite() {
     return (
-        <>
-            <span className={styles.favourite}>Add to favourite</span>
-        </>
+        // <>
+            <div className={styles.favourite}><span>Add to favourite</span></div>
+        // </>
     )
 }
 

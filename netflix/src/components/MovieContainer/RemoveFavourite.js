@@ -2,9 +2,9 @@ import React from 'react';
 import styles from './MovieContainer.module.css';
 function RemoveFavourite() {
     return (
-        <span className={styles.favourite}>
-            remove from favourites
-        </span>
+        <div className={styles.favourite}>
+            <span>Remove from favourites</span>
+        </div>
     )
 }
 

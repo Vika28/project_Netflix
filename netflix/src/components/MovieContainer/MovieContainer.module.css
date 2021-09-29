@@ -1,3 +1,13 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.mainTitle {
+    font-family: DejaVu Sans Mono, monospace;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 5px;
+}
 .movieContainer {
     display: flex;
     flex-direction: row;
@@ -7,25 +17,75 @@
 .movieContainerPage {
     padding: 20px;
 }
+/*styles for movie card*/
 .movieCard {
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
-    padding: 20px;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 10px grey;
+    padding-bottom: 15px;
+
 }
 .movieCard:hover {
-    /*transition: 1s;*/
-    /*transform: scale(1.1);*/
+    transition: 1s;
+    box-shadow: 0 0 10px grey;
 }
 .movieLink {
     text-transform: uppercase;
     color: #000;
-    margin-bottom: 15px;
     text-decoration: none;
 }
 .movieLink:visited{
     color: #000;
+}
+.movieTitle {
+    margin-top: 15px;
+    font-family: URW Chancery L, cursive;
+}
+.genresText {
+    color: gray;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+.textDescription {
+    font-size: 12px;
+    padding-bottom: 4px;
+}
+.iconsBox {
+    width: 100%;
+    display: flex;
+    border-top: 1px solid grey;
+    margin-top: 20px;
+    padding-top: 0;
+}
+.counter {
+    font-size: 24px;
+    display: block;
+}
+.ratingIcon {
+    color: #FFD900;
+    font-size: 24px;
+}
+.likeBoxWrapper {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    padding-top: 2px;
+    border-left: 1px solid slategrey;
+}
+.likeBoxWrapper:hover {
+    cursor: pointer;
+}
+.likeText {
+    margin-top: 8px;
+    margin-left: 3px;
+}
+.ratingBoxWrapper {
+    width: 50%;
 }
 .noImg {
     width: 210px;
@@ -38,17 +98,28 @@
     font-size: 20px;
     width: 300px;
     height: 50px;
-    border: 1px solid grey;
+    border: 1px solid black;
     border-radius: 2px;
 }
 .favourite {
-    display: inline-block;
-    background-color: rgb(255, 255, 0);
-    padding: 3px 15px;
-    margin-top: 15px;
+    /*display: inline-block;*/
+    /*display: flex;*/
+    /*width: 100%;*/
+    /*background-color: rgb(255, 255, 0);*/
+    /*padding: 3px 15px;*/
+    text-align: center;;
+    padding: 5px;
+    border: 2px solid #FD5800;
     border-radius: 3px;
+    font-size: 14px;
 }
-
+.favourite:hover {
+    color: #fff;
+    background-color: #FD5800;
+    transition: 1s;
+}
+.favouriteWrapper {
+}
 .favourite:hover {
     cursor: pointer;
 }
@@ -64,3 +135,38 @@
 .activeLike {
     color: red;
 }
+/*style for radiobutton genres*/
+.radioButtonWrapper {
+    /*background-color: pink;*/
+    margin-bottom: 10px;
+}
+.radioButton {
+    /*display: block;*/
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+/*.radioButton:hover {*/
+/*    cursor: pointer;*/
+/*    background-color: rgba(255,0,0,136);*/
+/*}*/
+.radioButton label {
+    margin-left: 3px;
+    border: 1px solid red;
+    border-radius: 7px;
+    padding: 5px;
+}
+.radioButton label:hover {
+    cursor: pointer;
+    background-color: red;
+    color: white;
+
+}
+.radioInput {
+    display: none;
+}
+.radioInput:checked+label{
+    background-color: red;
+    color: white;
+}
+
+/*end styles for radiobutton*/

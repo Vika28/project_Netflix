@@ -1,3 +1,6 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
 .btnSignOut {
     text-decoration: none;
     background-color: red;
@@ -16,6 +19,7 @@
 .userName {
     text-align: center;
     margin: 10px;
+    color: #fff;
 }
 .profileRow {
     display: flex;

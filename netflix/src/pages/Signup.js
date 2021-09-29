@@ -3,13 +3,12 @@ import { useHistory } from 'react-router-dom';
 import 'firebase/firestore';
 import 'firebase/auth';
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
-import { FirebaseContext } from "../context/firebase";
 import {Link as ReachRouterLink } from 'react-router-dom';
 import * as ROUTES from './../constants/Routes';
 import Logo from "../components/Header/Logo";
 import Input from "../components/Input";
 import styles from "./pages.module.css";
-import {addDoc, collection, getDocs, doc, setDoc, getDoc } from "firebase/firestore";
+import { collection, doc, setDoc } from "firebase/firestore";
 import {db} from "../lib/firebase.prod";
 
 function Signup() {

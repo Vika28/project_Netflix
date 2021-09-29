@@ -1,4 +1,4 @@
-import React, {useContext, useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import MovieContainer from './../components/MovieContainer/MovieContainer';
 import Profiles from "../components/Profiles/Profiles";

@@ -134,10 +134,12 @@
 .radioButtonWrapper {
     /*background-color: pink;*/
     margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
 }
 .radioButton {
     /*display: block;*/
-    margin-bottom: 10px;
+    padding-bottom: 10px;
     margin-left: 10px;
 }
 .radioButton label {
@@ -159,5 +161,4 @@
     background-color: red;
     color: white;
 }
-
 /*end styles for radiobutton*/

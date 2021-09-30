@@ -21,12 +21,11 @@
     text-align: center;
 }
 .page {
-    background-image: url("https://miro.medium.com/max/1400/1*5lyavS59mazOFnb55Z6znQ.png");
-    /*background-size: auto 500px;*/
+    background: url("https://miro.medium.com/max/1400/1*5lyavS59mazOFnb55Z6znQ.png") no-repeat top center;
     background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat !important;
     padding: 20px 20px 500px;
+
+    min-height: 100vh;
 }
 .btn {
     display: block;

@@ -10,7 +10,7 @@ import requests from "../../requests";
 import AddFavourite from "./AddFavourite";
 import RemoveFavourite from "./RemoveFavourite";
 import RadioButtonLabel from "./RadioButtonLabel";
-import { db } from './../../lib/firebase.prod'
+import { db } from './../../lib/firebase.prod';
 
 function MovieContainer(props) {
     const [allMovies, setAllMovies] = useState([]);
@@ -20,9 +20,6 @@ function MovieContainer(props) {
     const [likedMovies, setLikedMovies] = useState([]);
     const [stateRadioButton, setStateRadioButton] = useState(false);
     const [nameRadioButton, setNameRadioButton] = useState('');
-    const [sortedArray, setSortedArray] = useState([]);
-    const [stateRadioButtonSort, setStateRadioButtonSort] = useState(false);
-    const [nameRadioButtonSort, setNameRadioButtonSort] = useState('');
 
     const genresArr = [
         {id: 'drama', label: 'Drama'},
@@ -146,7 +143,6 @@ function MovieContainer(props) {
     useEffect(async () => {
         let request = await axios.get(requests.fetchNetflixAll);
         setAllMovies(request.data);
-        console.log('all mov', request.data);
     }, []);
 
 
@@ -182,6 +178,8 @@ function MovieContainer(props) {
     } else {
         movies = allMovies;
     }
+
+
 
     return (
         <div className={styles.movieContainerPage}>
@@ -226,6 +224,8 @@ function MovieContainer(props) {
                         </div>
                     )
                 })}
+
+
             </div>
             <div>
                     {favourites.length > 0 ? <>

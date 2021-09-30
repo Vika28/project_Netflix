@@ -102,11 +102,6 @@
     border-radius: 2px;
 }
 .favourite {
-    /*display: inline-block;*/
-    /*display: flex;*/
-    /*width: 100%;*/
-    /*background-color: rgb(255, 255, 0);*/
-    /*padding: 3px 15px;*/
     text-align: center;;
     padding: 5px;
     border: 2px solid #FD5800;
@@ -145,10 +140,6 @@
     margin-bottom: 10px;
     margin-left: 10px;
 }
-/*.radioButton:hover {*/
-/*    cursor: pointer;*/
-/*    background-color: rgba(255,0,0,136);*/
-/*}*/
 .radioButton label {
     margin-left: 3px;
     border: 1px solid red;

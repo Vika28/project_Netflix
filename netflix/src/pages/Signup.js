@@ -12,6 +12,7 @@ import { collection, doc, setDoc } from "firebase/firestore";
 import {db} from "../lib/firebase.prod";
 
 function Signup() {
+    const history1 = useHistory();
 
     const history = useHistory();
     const [firstName, setFirstName] = useState('');

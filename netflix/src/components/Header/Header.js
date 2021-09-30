@@ -7,9 +7,7 @@ function Header() {
     return (
         <div className={styles.headerMain}>
             <Logo />
-
                     <ReachRouterLink to='/signin' className={styles.signLink}><button className={styles.btnRegister}>Sign in</button></ReachRouterLink>
-
         </div>
     )
 }

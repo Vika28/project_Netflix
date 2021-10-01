@@ -73,3 +73,16 @@
     align-items: center;
     padding: 25px 50px;
 }
+@media (max-width: 767px) {
+    /* стили для xs-устройств */
+    .form {
+        width: 250px;
+    }
+    .input {
+        width: 200px;
+    }
+    .btn {
+        width: 200px;
+        height: 40px;
+    }
+}

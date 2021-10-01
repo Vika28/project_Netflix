@@ -2,6 +2,7 @@ import React, {useCallback} from 'react';
 import { useState, useEffect } from 'react';
 import { debounce } from 'throttle-debounce';
 import { collection, getDocs, updateDoc, doc } from "firebase/firestore";
+import CircleLoader from "react-spinners/CircleLoader";
 import axios from './../../axios';
 import MovieCard from "./MovieCard";
 import styles from './MovieContainer.module.css';
@@ -20,6 +21,8 @@ function MovieContainer(props) {
     const [likedMovies, setLikedMovies] = useState([]);
     const [stateRadioButton, setStateRadioButton] = useState(false);
     const [nameRadioButton, setNameRadioButton] = useState('');
+    const [loading, setLoading] = useState(true);
+    const [loadingAll, setLoadingAll] = useState(true);
 
     const genresArr = [
         {id: 'drama', label: 'Drama'},
@@ -143,6 +146,7 @@ function MovieContainer(props) {
     useEffect(async () => {
         let request = await axios.get(requests.fetchNetflixAll);
         setAllMovies(request.data);
+        setLoadingAll(false);
     }, []);
 
 
@@ -154,8 +158,10 @@ function MovieContainer(props) {
                         if (doc1.id === props.userUID) {
                             setFavourites(doc1.data().favouriteMovies);
                             setLikedMovies(doc1.data().likedMovies);
+
                         }
                     });
+                    setLoading(false);
                 })
         }
     }, [props.userUID]);
@@ -208,46 +214,61 @@ function MovieContainer(props) {
                 }
 
             <div className={styles.movieContainer}>
-                {movies.map(movie => {
-                    return (
-                        <div
-                            key={movie.id}
-                        >
-                            <MovieCard
-                                movie={movie}
-                                favouriteComponent={AddFavourite}
-                                handleFavouritesClick={addFavouriteMovie}
-                                likedMovies={likedMovies}
-                                setLikedMovies={setLikedMovies}
-                                storeLikeMovie={toggleLikeToMovie}
-                            />
-                        </div>
-                    )
-                })}
-
-
-            </div>
-            <div>
-                    {favourites.length > 0 ? <>
-                        <h2 className={styles.mainTitle}>Favourites</h2>
-                            <div className={styles.movieContainer}>
-                                {favourites.map(movie => {
-                                    return (
+                {
+                    loadingAll ?
+                        <CircleLoader color={"#D73674"} loading={loading} size={30} />
+                        :
+                        <>
+                            {movies.map(movie => {
+                                return (
+                                    <div
+                                        key={movie.id}
+                                    >
                                         <MovieCard
-                                            key={movie.id}
                                             movie={movie}
-                                            favouriteComponent={RemoveFavourite}
-                                            handleFavouritesClick={removeFavouriteMovie}
+                                            favouriteComponent={AddFavourite}
+                                            handleFavouritesClick={addFavouriteMovie}
                                             likedMovies={likedMovies}
                                             setLikedMovies={setLikedMovies}
                                             storeLikeMovie={toggleLikeToMovie}
                                         />
-                                    )
-                                })}
-                            </div>
-                        </>  :
-                        <h2 className={styles.mainTitle}>No favourites</h2>
-                    }
+                                    </div>
+                                )
+                            })}
+                        </>
+                }
+
+
+
+            </div>
+            <div>
+                {loading ?
+                    <CircleLoader color={"#D73674"} loading={loading} size={30} />
+                    :
+                    <>
+                        {favourites.length > 0 ? <>
+                                <h2 className={styles.mainTitle}>Favourites</h2>
+                                <div className={styles.movieContainer}>
+                                    {favourites.map(movie => {
+                                        return (
+                                            <MovieCard
+                                                key={movie.id}
+                                                movie={movie}
+                                                favouriteComponent={RemoveFavourite}
+                                                handleFavouritesClick={removeFavouriteMovie}
+                                                likedMovies={likedMovies}
+                                                setLikedMovies={setLikedMovies}
+                                                storeLikeMovie={toggleLikeToMovie}
+                                            />
+                                        )
+                                    })}
+                                </div>
+                            </>  :
+                            <h2 className={styles.mainTitle}>No favourites</h2>
+                        }
+                    </>
+                }
+
             </div>
 
         </div>

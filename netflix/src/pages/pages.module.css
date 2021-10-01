@@ -105,4 +105,10 @@
         width: 200px;
         height: 40px;
     }
+    .inputEmail:focus + .hint{
+        top: 70px;
+    }
+    .inputPassword:focus + .hint{
+        top: 130px;
+    }
 }

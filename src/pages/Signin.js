@@ -2,8 +2,8 @@ import React, {useState, useContext} from 'react';
 import { useHistory } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import {Link as ReachRouterLink } from 'react-router-dom';
-import * as ROUTES from './../constants/Routes';
-import Logo from './../components/Header/Logo';
+import * as ROUTES from '../constants/Routes';
+import Logo from '../components/Header/Logo';
 import Input from "../components/Input";
 import styles from './pages.module.css';
 

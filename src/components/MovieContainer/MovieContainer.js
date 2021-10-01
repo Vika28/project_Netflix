@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { debounce } from 'throttle-debounce';
 import { collection, getDocs, updateDoc, doc } from "firebase/firestore";
 import CircleLoader from "react-spinners/CircleLoader";
-import axios from './../../axios';
+import axios from '../../axios';
 import MovieCard from "./MovieCard";
 import styles from './MovieContainer.module.css';
 import SearchBox from "./SearchBox";
@@ -11,7 +11,7 @@ import requests from "../../requests";
 import AddFavourite from "./AddFavourite";
 import RemoveFavourite from "./RemoveFavourite";
 import RadioButtonLabel from "./RadioButtonLabel";
-import { db } from './../../lib/firebase.prod';
+import { db } from '../../lib/firebase.prod';
 
 function MovieContainer(props) {
     const [allMovies, setAllMovies] = useState([]);

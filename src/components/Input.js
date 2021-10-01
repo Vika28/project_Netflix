@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './../pages/pages.module.css'
+import styles from '../pages/pages.module.css'
 
 function Input(props) {
     return (

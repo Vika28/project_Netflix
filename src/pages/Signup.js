@@ -4,7 +4,7 @@ import 'firebase/firestore';
 import 'firebase/auth';
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import {Link as ReachRouterLink } from 'react-router-dom';
-import * as ROUTES from './../constants/Routes';
+import * as ROUTES from '../constants/Routes';
 import Logo from "../components/Header/Logo";
 import Input from "../components/Input";
 import styles from "./pages.module.css";

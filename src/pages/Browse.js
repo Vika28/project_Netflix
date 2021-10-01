@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import MovieContainer from './../components/MovieContainer/MovieContainer';
+import MovieContainer from '../components/MovieContainer/MovieContainer';
 import Profiles from "../components/Profiles/Profiles";
 import Logo from "../components/Header/Logo";
 import styles from './pages.module.css';

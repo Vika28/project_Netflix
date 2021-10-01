@@ -95,6 +95,10 @@
     display: block;
 }
 @media (max-width: 767px) {
+    .browseHeader {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
     .form {
         width: 250px;
     }

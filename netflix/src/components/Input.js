@@ -3,13 +3,18 @@ import styles from './../pages/pages.module.css'
 
 function Input(props) {
     return (
-        <input
-            type={props.type}
-            placeholder={props.placeholder}
-            value={props.value}
-            onChange={props.onChange}
-            className={styles.input}
-        />
+        <>
+            <input
+                type={props.type}
+                placeholder={props.placeholder}
+                value={props.value}
+                onChange={props.onChange}
+                className={`${styles.input} ${props.className}`}
+                // checked={props.checked}
+            />
+            <p className={styles.hint}>{props.hint}</p>
+        </>
+
     )
 }
 

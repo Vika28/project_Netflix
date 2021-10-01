@@ -10,7 +10,7 @@
     background-color: #000000B6;
     padding-top: 30px;
     padding-bottom: 50px;
-
+    position: relative;
 }
 
 .input {
@@ -73,8 +73,28 @@
     align-items: center;
     padding: 25px 50px;
 }
+
+.hint {
+    display: none;
+    padding: 5px;
+    border: 3px solid darkorange;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.inputEmail:focus + .hint{
+    background-color: #fff;
+    position: absolute;
+    top: 87px;
+    display: block;
+}
+.inputPassword:focus + .hint{
+    background-color: #fff;
+    position: absolute;
+    top: 140px;
+    display: block;
+}
 @media (max-width: 767px) {
-    /* стили для xs-устройств */
     .form {
         width: 250px;
     }

@@ -12,7 +12,6 @@ import { collection, doc, setDoc } from "firebase/firestore";
 import {db} from "../lib/firebase.prod";
 
 function Signup() {
-    const history1 = useHistory();
 
     const history = useHistory();
     const [firstName, setFirstName] = useState('');
@@ -24,7 +23,6 @@ function Signup() {
     const handleSignUp = (event) => {
         event.preventDefault();
 
-        //do firebase stuff
         const auth = getAuth();
         createUserWithEmailAndPassword(auth, emailAddress, password)
             .then((result) => {
@@ -68,6 +66,8 @@ function Signup() {
                     placeholder="Email"
                     value={emailAddress}
                     onChange={({ target }) => setEmailAddress(target.value)}
+                    className={styles.inputEmail}
+                    hint="Enter email in format xxxx@ccc.ddd"
                 />
                 <Input
                     type="password"
@@ -75,6 +75,8 @@ function Signup() {
                     autoComplete="off"
                     value={password}
                     onChange={({ target }) => setPassword(target.value)}
+                    className={styles.inputPassword}
+                    hint="Password must be at least 9 symbols"
                 />
                 <button disabled={isInvalid} type="submit" className={styles.btn}>sign up</button>
                 <p className={styles.text}>Already a user? <ReachRouterLink to='/signin' className={styles.signLink}>Sign in</ReachRouterLink></p>

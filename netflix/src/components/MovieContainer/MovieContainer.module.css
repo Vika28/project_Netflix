@@ -113,8 +113,7 @@
     background-color: #FD5800;
     transition: 1s;
 }
-.favouriteWrapper {
-}
+
 .favourite:hover {
     cursor: pointer;
 }
@@ -122,7 +121,6 @@
 .likesAmount {
     color: black;
 }
-
 .likesAmount:hover {
     cursor: pointer;
 }
@@ -132,13 +130,11 @@
 }
 /*style for radiobutton genres*/
 .radioButtonWrapper {
-    /*background-color: pink;*/
     margin-bottom: 10px;
     display: flex;
     flex-wrap: wrap;
 }
 .radioButton {
-    /*display: block;*/
     padding-bottom: 10px;
     margin-left: 10px;
 }
@@ -153,7 +149,6 @@
     cursor: pointer;
     background-color: red;
     color: white;
-
 }
 .radioInput {
     display: none;

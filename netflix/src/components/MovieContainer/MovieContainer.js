@@ -120,7 +120,6 @@ function MovieContainer(props) {
                     }
                 });
             })
-
     }
 
     const removeFavouriteMovie = (movie) => {
@@ -158,7 +157,6 @@ function MovieContainer(props) {
                         if (doc1.id === props.userUID) {
                             setFavourites(doc1.data().favouriteMovies);
                             setLikedMovies(doc1.data().likedMovies);
-
                         }
                     });
                     setLoading(false);
@@ -184,8 +182,6 @@ function MovieContainer(props) {
     } else {
         movies = allMovies;
     }
-
-
 
     return (
         <div className={styles.movieContainerPage}>
@@ -221,9 +217,7 @@ function MovieContainer(props) {
                         <>
                             {movies.map(movie => {
                                 return (
-                                    <div
-                                        key={movie.id}
-                                    >
+                                    <div key={movie.id}>
                                         <MovieCard
                                             movie={movie}
                                             favouriteComponent={AddFavourite}
@@ -237,9 +231,6 @@ function MovieContainer(props) {
                             })}
                         </>
                 }
-
-
-
             </div>
             <div>
                 {loading ?
@@ -268,9 +259,7 @@ function MovieContainer(props) {
                         }
                     </>
                 }
-
             </div>
-
         </div>
     )
 }

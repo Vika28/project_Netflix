@@ -37,9 +37,7 @@ function MovieCard({ movie, favouriteComponent, handleFavouritesClick, likedMovi
             </div>
 
 
-            <div onClick={() => handleFavouritesClick(movie)}
-            className={styles.favouriteWrapper}
-            >
+            <div onClick={() => handleFavouritesClick(movie)}>
                 <FavouriteComponent />
             </div>
         </div>

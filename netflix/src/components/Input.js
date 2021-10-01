@@ -10,7 +10,6 @@ function Input(props) {
                 value={props.value}
                 onChange={props.onChange}
                 className={`${styles.input} ${props.className}`}
-                // checked={props.checked}
             />
             <p className={styles.hint}>{props.hint}</p>
         </>

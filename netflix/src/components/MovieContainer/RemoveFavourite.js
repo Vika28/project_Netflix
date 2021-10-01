@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './MovieContainer.module.css';
+
 function RemoveFavourite() {
     return (
         <div className={styles.favourite}>

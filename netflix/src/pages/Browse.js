@@ -5,9 +5,8 @@ import Profiles from "../components/Profiles/Profiles";
 import Logo from "../components/Header/Logo";
 import styles from './pages.module.css';
 
-function Browse(props) {
+function Browse() {
 
-    const [profile, setProfile] = useState({});
     const [userName, setUserName] = useState('');
     const [userUID, setUserUID] = useState('');
 
@@ -21,8 +20,6 @@ function Browse(props) {
             }
         });
     },[]);
-    console.log('user UID', userUID);
-
 
     return (
         <div>
@@ -30,7 +27,6 @@ function Browse(props) {
                 <Logo />
                 <Profiles
                     userName={userName}
-                    setProfile={setProfile}
                 />
             </div>
             <MovieContainer

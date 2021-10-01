@@ -29,10 +29,6 @@ function Signin() {
                 alert('No user with such email and password, please try again or sign up');
             })
     }
-    // const passwordHint =  () => {
-    //
-    // }
-
 
     return (
         <div className={styles.page}>
@@ -55,7 +51,6 @@ function Signin() {
                 />
                 <button disabled={isInvalid} type="submit" className={styles.btn}>sign in</button>
                 <p className={styles.text}>New to netflix? <ReachRouterLink to='/signup' className={styles.signLink}>Sign up now</ReachRouterLink></p>
-
             </form>
         </div>
     )

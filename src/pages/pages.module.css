@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.form {
+    width: 600px;
+    margin: 0 auto;
+    background-color: #000000B6;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    position: relative;
+}
+
+.input {
+    display: block;
+    height: 30px;
+    width: 400px;
+    margin: 0 auto 15px;
+    text-align: center;
+}
+.page {
+    background: url("https://miro.medium.com/max/1400/1*5lyavS59mazOFnb55Z6znQ.png") no-repeat top center;
+    background-size: cover;
+    padding: 20px 20px 500px;
+    min-height: 100vh;
+}
+.btn {
+    display: block;
+    width: 250px;
+    background-color: red;
+    color: #fff;
+    margin: 0 auto;
+    height: 55px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+}
+.btn:hover {
+    cursor: pointer;
+}
+.btn:disabled {
+    background-color: #671907;
+}
+.text {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+}
+.signLink {
+    color: #fff;
+}
+.signLink:visited {
+    color: #fff;
+}
+.signTitle {
+    margin-bottom: 25px;
+    color: #fff;
+    text-align: center;
+}
+
+/*browse*/
+.browseHeader {
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(0,0,0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 50px;
+}
+
+.hint {
+    display: none;
+    padding: 5px;
+    border: 3px solid darkorange;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.inputEmail:focus + .hint{
+    background-color: #fff;
+    position: absolute;
+    top: 87px;
+    display: block;
+}
+.inputPassword:focus + .hint{
+    background-color: #fff;
+    position: absolute;
+    top: 140px;
+    display: block;
+}
+@media (max-width: 767px) {
+    .browseHeader {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    .form {
+        width: 250px;
+    }
+    .input {
+        width: 200px;
+    }
+    .btn {
+        width: 200px;
+        height: 40px;
+    }
+    .inputEmail:focus + .hint{
+        top: 70px;
+    }
+    .inputPassword:focus + .hint{
+        top: 130px;
+    }
+}

@@ -1,0 +1,37 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.btnSignOut {
+    text-decoration: none;
+    background-color: red;
+    text-transform: uppercase;
+    color: white;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+}
+.btnSignOut:visited {
+    color: white;
+}
+.btnSignOut:hover {
+    cursor: pointer;
+}
+.userName {
+    text-align: center;
+    margin: 10px;
+    color: #fff;
+}
+.profileRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@media (max-width: 767px) {
+    .profileRow {
+        flex-direction: column;
+    }
+    .userName {
+        margin-top: 0;
+    }
+}
